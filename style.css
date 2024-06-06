@@ -1,0 +1,123 @@
+@font-face{
+    font-family: sans;
+    src: url(./sans/IRANSansWeb.woff2);
+}
+body{
+    font-family: sans;
+    background-color: aliceblue
+
+}
+
+
+
+.background{
+    background-image: url(./imges/d26a5b8d821ea72b7e3a5f1fc863d9607e310346_2000x2000.webp);
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.cartBack{
+background-color:rgb(239, 231, 231);
+}
+
+.sabad {
+    /* background-color: black; */
+    height: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+
+}
+
+.img {
+    pointer-events: none;
+
+}
+
+.point {
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 770px) {
+    .plusbtn{
+        font-size: 10px;
+    }
+    .foodname{
+        font-size: 14px !important;
+    }
+    .foodprice{
+        font-size: 12px !important;
+    }
+    .foodimg{
+        width: 100%;
+    }
+    /* .basketname{
+        font-size: 10px;
+    } */
+    .sabadkharid{
+        font-size: 14px;
+    }
+    .maliat{
+        font-size: 14px;
+    }
+    .majmu{
+        font-size: 15px;
+    }
+    .takmil{
+        font-size: 10px;
+    }
+    .nushidni{
+        font-size: 10px;
+    }
+    .nushidniimg{
+        width: 10px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .plusbtn{
+        font-size: 10px;
+    }
+    .foodname{
+        font-size: 14px;
+    }
+    .foodprice{
+        font-size: 11px;
+    }
+    .foodimg{
+        width: 100%;
+    }
+   .basketname{
+    font-size: 15px;
+   }
+   .basketprice{
+    font-size: 12px;
+   } 
+   .basketbtn{
+    font-size: 12px;
+   }
+   .menubar{
+    font-size: 13px;
+   }
+   .sabadkharid{
+    font-size: 14px;
+}
+.maliat{
+    font-size: 16px;
+}
+.majmu{
+    font-size: 17px;
+}
+.takmil{
+    font-size: 12px;
+}
+  }
+
+  @media screen and (min-width: 992px) {
+    .cartcont{
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+    }
+  }
