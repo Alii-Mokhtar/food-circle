@@ -28,3 +28,15 @@ let foods = [
     { type: 'نوشیدنی', src: 'imges/drinks/اب میوه طبیعی.jpg', name: 'اب میوه طبیعی', price: 80000, },
     { type: 'نوشیدنی', src: './imges/drinks/دلستر.jpg', name: 'دلستر', price: 25000, },
 ]
+
+
+
+let root = document.getElementById('root')
+let basketroot = document.getElementById('basketroot')
+let input = document.getElementById('input')
+let tax = document.getElementById('tax')
+let total = document.getElementById('total')
+let count = document.getElementById('count')
+let choose = document.getElementById('choose')
+let mybasket = []
+
