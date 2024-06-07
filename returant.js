@@ -82,3 +82,44 @@ function addfood(food) {
     setcount()
     renderbasket(mybasket)
 }
+
+
+
+function setlocals(addmy) {
+    localStorage.setItem('foods', JSON.stringify(addmy))
+}
+
+
+function setprice() {
+    localStorage.setItem('price', total.textContent)
+    localStorage.setItem('tax', tax.textContent)
+}
+
+window.addEventListener("load", getprice)
+function getprice() {
+    let local = localStorage.getItem("price")
+    total.textContent = local
+    let localtax = localStorage.getItem("tax")
+    tax.textContent = localtax
+}
+
+
+window.addEventListener("load", getlocal)
+function getlocal() {
+    let local = JSON.parse(localStorage.getItem("foods"))
+    if (local) {
+        mybasket = local
+    }
+    else {
+        mybasket = []
+    }
+    renderbasket(mybasket)
+}
+function setcount() {
+    localStorage.setItem("count", count.textContent)
+}
+window.addEventListener("load", getcount)
+function getcount() {
+    let local = localStorage.getItem("count")
+    count.textContent = mybasket.length
+}
