@@ -163,3 +163,11 @@ function removefood(basket) {
     count.textContent = +count.textContent - 1
     renderbasket(mybasket)
 }
+
+
+function allfoods() {
+    let val = event.target.innerText
+    choose.textContent = val
+
+    render(foods)
+}
