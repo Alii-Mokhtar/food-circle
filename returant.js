@@ -140,3 +140,26 @@ function renderbasket(mylist) {
     })
     basketroot.innerHTML = mybasket.join('')
 }
+
+
+function removefood(basket) {
+    let index = mybasket.findIndex(function (food) { return food.name == basket })
+    mybasket.splice(index, 1)
+    setlocals(mybasket)
+    let aux = 0
+    for (i = 0; i < mybasket.length; i++) {
+        aux += mybasket[i].price
+        let a = aux * 0.1
+        let alltax = tax.textContent = a.toLocaleString("en-US")
+        let t = aux + a
+        total.textContent = t.toLocaleString("en-US")
+    }
+    if (mybasket.length == 0) {
+        total.textContent = ''
+        tax.textContent = ''
+    }
+    setprice()
+
+    count.textContent = +count.textContent - 1
+    renderbasket(mybasket)
+}
