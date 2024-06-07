@@ -40,3 +40,27 @@ let count = document.getElementById('count')
 let choose = document.getElementById('choose')
 let mybasket = []
 
+
+
+
+function render(list) {
+    let mylist = list.map(function (food) {
+        return `<div class="border cartcont col-sm-5 col-md-5 col-lg-3 cartBack d-flex flex-column rounded m-2">
+        <img class="foodimg rounded"
+            src="${food.src}"
+            alt="">
+        <div class="d-flex flex-column align-items-center mt-3">
+            <div class="foodname">${food.name}</div>
+            <div class="foodprice" dir="rtl">${food.price.toLocaleString("en-US")}<span> تومان</span></div>
+        </div>
+        <div class="d-flex justify-content-center m-3">
+            <buttn onclick='addfood("${food.name}")'  class="plusbtn d-flex justify-content-center btn btn-sm btn-dark border w-25">+</button>
+            
+            </div>
+
+    </div>`
+    })
+    root.innerHTML = mylist.join('')
+}
+
+
