@@ -64,3 +64,21 @@ function render(list) {
 }
 
 
+function addfood(food) {
+    let allfoods = foods.find(function (fod) { return fod.name == food })
+    mybasket.push(allfoods)
+    console.log(mybasket)
+    let aux = 0
+    for (i = 0; i < mybasket.length; i++) {
+        aux += mybasket[i].price
+        let a = aux * 0.1
+        let alltax = tax.textContent = a.toLocaleString("en-US")
+        let t = aux + a
+        total.textContent = t.toLocaleString("en-US")
+    }
+    count.textContent = +count.textContent + 1
+    setlocals(mybasket)
+    setprice()
+    setcount()
+    renderbasket(mybasket)
+}
