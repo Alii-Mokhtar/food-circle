@@ -179,3 +179,13 @@ function search() {
     })
     render(search)
 }
+
+
+function filter(event) {
+    let val = event.target.innerText
+    let res = foods.filter(function (food) { return food.type == val })
+    render(res)
+    choose.textContent = val
+}
+
+render(foods)
