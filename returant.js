@@ -123,3 +123,20 @@ function getcount() {
     let local = localStorage.getItem("count")
     count.textContent = mybasket.length
 }
+
+
+
+function renderbasket(mylist) {
+
+    let mybasket = mylist.map(function (basket) {
+        return `<div class='d-flex justify-content-around'>
+        <div class="border-bottom col-6">
+            <div class="basketname mt-3 h5 mb-2"><span class='font2'>${basket.name}</span></div>
+            <div class="basketprice mb-2"><span class='font'>${basket.price.toLocaleString("en-US")} تومان</span></div>
+            <button id='why' onclick='removefood("${basket.name}")' class="basketbtn why btn btn-danger btn-sm mb-3 mt-2">حذف از سبد</button>
+        </div>
+        <div class="basketimg align-self-start pt-2 col-6"><img class='rounded' width="110px" src="${basket.src}" alt=""></div>
+    </div>`
+    })
+    basketroot.innerHTML = mybasket.join('')
+}
