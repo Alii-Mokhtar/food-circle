@@ -171,3 +171,11 @@ function allfoods() {
 
     render(foods)
 }
+
+function search() {
+    let value = event.target.value
+    let search = foods.filter(function (food) {
+        return food.name.search(value) > -1
+    })
+    render(search)
+}
