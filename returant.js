@@ -90,24 +90,10 @@ function addfood(food) {
 function setlocals(addmy) {
     localStorage.setItem('foods', JSON.stringify(addmy))
 }
-
-
-function setprice() {
-    localStorage.setItem('price', total.textContent)
-    localStorage.setItem('tax', tax.textContent)
-}
-
-window.addEventListener("load", getprice)
-function getprice() {
-    let local = localStorage.getItem("price")
-    total.textContent = local
-    let localtax = localStorage.getItem("tax")
-    tax.textContent = localtax
-}
-
-
 window.addEventListener("load", getlocal)
 function getlocal() {
+    zeroTax.textContent = ''
+    zeroTotal.textContent = ''
     let local = JSON.parse(localStorage.getItem("foods"))
     if (local) {
         mybasket = local
@@ -117,6 +103,23 @@ function getlocal() {
     }
     renderbasket(mybasket)
 }
+
+
+function setprice() {
+    localStorage.setItem('price', total.textContent)
+    localStorage.setItem('tax', tax.textContent)
+}
+window.addEventListener("load", getprice)
+function getprice() {
+    zeroTax.textContent = ''
+    zeroTotal.textContent = ''
+    let local = localStorage.getItem("price")
+    total.textContent = local
+    let localtax = localStorage.getItem("tax")
+    tax.textContent = localtax
+}
+
+
 function setcount() {
     localStorage.setItem("count", count.textContent)
 }
